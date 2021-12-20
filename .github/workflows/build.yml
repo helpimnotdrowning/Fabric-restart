@@ -40,4 +40,3 @@ jobs:
         with: 
           # Minecraft version to update to
           game-version: 1.18.1
-                with:
