@@ -11,11 +11,7 @@ jobs:
     strategy:
       matrix:
         # Use these Java versions
-        java: [
-          1.8,  # Minimum supported by Minecraft
-          11,   # Current Java LTS
-          15    # Latest version
-        ]
+        java: [17]
         # and run on both Linux and Windows
         os: [ubuntu-20.04, windows-latest]
     runs-on: ${{ matrix.os }}
@@ -39,3 +35,10 @@ jobs:
         with:
           name: Artifacts
           path: build/libs/
+      - name: Fabric Update
+        # You may pin to the exact commit or the version.
+        # uses: JamCoreModding/FabricUpdateAction@1ab7febe3160c88f52ae13f092f9ec20ac32bd3b
+        uses: JamCoreModding/FabricUpdateAction@1.0.3
+        with: 
+          # Minecraft version to update to
+          game-version: 1.18.1
